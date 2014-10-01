@@ -29,14 +29,17 @@ tToken getNextToken(void)
 	initToken();
 	while(!stop)
 	{
-		   printf("aa\n");
-		c = getc(&source);
-		   printf("aa\n");
-		strAddChar(token.data, c);
-		//c = getc(source);
-		//strAddChar(token.data, c);
-		//int a = strGetLength(token.data);
-		printf("delka %d\n", i);
+		printf("aa\n");
+		c = getc(source);
+		printf("aa\n");
+		strAddChar(&token.data, c);
+		c = getc(source);
+		strAddChar(&token.data, c);
+		int a = strGetLength(&token.data);
+		printf("delka %d\n", a);
+		strClear(&token.data);
+		a = strGetLength(&token.data);
+		printf("delka %d\n", a);
 		stop = true;
 	}
 	return token;

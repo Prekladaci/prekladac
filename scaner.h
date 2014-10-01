@@ -33,7 +33,7 @@ typedef enum
 typedef struct
 {
 	tStav stav;
-	string *data;
+	string data;
 }tToken;
 
 extern tToken token;
