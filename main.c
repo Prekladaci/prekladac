@@ -23,8 +23,19 @@ int main(int argc, char** argv)
       return INTERN_ERROR;
    }   
    setSourceFile(f);
-   getNextToken();  //TOHLE SE VOLA V PARSERU
+   int tokenn=0;
+   do
+   {
+      tokenn = getNextToken();  //TOHLE SE VOLA V PARSERU
+      printf("token je: %d\n",tokenn);
+   } while(tokenn != 101);
 
-   fclose(f);
-	return 0;
+
+   /////////////////////////////////////////////////
+   ////////////TADY PO SOBĚ UKLÍZÍME////////////////
+   ////////////////////////////////////////////////
+   strFree(&token.data); //uvolním řetezec
+   fclose(f); //zavřeme soubor
+	
+   return 0;
 }
